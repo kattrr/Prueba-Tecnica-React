@@ -41,7 +41,11 @@ const Departamentos = () => {
                                 <FontAwesomeIcon icon={faUsers} /> <strong>Población:</strong> {department.population}
                             </>
                         }
-                        description={department.description} 
+                        description={department.description}
+                        surface={department.surface}
+                        phone={department.phonePrefix}
+                        municipalities={department.municipalities}
+                        capital = {department.cityCapital}
                     />
                 )}
             />
