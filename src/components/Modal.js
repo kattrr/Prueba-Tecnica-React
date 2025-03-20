@@ -8,12 +8,15 @@ const Modal = (props) => {
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h1 className="modal-title" id="exampleModalLabel">{props.name}</h1>
+                        <h1 className="modal-title" id="exampleModalLabel">{props.name}{props.lastName ? ` ${props.lastName}` : ''}</h1>
                         <button type="button" className="btn-close" onClick={props.onClose} aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        {props.image && <img src={props.image} className="card-img-top" alt={props.name} />}
+                        {props.image && <img src={props.image} className="img-fluid d-block mx-auto mb-5" alt={props.name} style={{maxWidth: "200px"}} />}
                         {props.population && <p> {props.population}</p>}
+                        {props.politicalParty && <p><strong>Partido Político:</strong> {props.politicalParty}</p>}
+                        {props.startPeriodDate && <p><strong>Inicio del Periodo:</strong> {props.startPeriodDate}</p>}
+                        {props.endPeriodDate && <p><strong>Fin del Periodo:</strong> {props.endPeriodDate}</p>}
                         {props.surface && <p> <FontAwesomeIcon icon="fa-solid fa-left-right" /><strong> Superficie:</strong> {props.surface} km²</p>}
                         <p>{props.description}</p>
                         {props.phone && <p> <FontAwesomeIcon icon="fa-solid fa-phone" /><strong> Prefijo:</strong> 60{props.phone}</p>}
@@ -22,7 +25,7 @@ const Modal = (props) => {
                             <>
                                 
                                 <div className="card w-100">
-                                <div class="card-header">
+                                <div className="card-header">
                                     <h2 className='card-title' >Capital:</h2>
                                 </div>
                                     <div className="card-body">
