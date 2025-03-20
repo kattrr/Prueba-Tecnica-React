@@ -11,6 +11,7 @@ const Modal = (props) => {
                         <button type="button" className="btn-close" onClick={props.onClose} aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
+                        {props.image && <img src={props.image} className="card-img-top" alt={props.name} />}
                         {props.population && <p> {props.population}</p>}
                         {props.surface && <p> <FontAwesomeIcon icon="fa-solid fa-left-right" /><strong> Superficie:</strong> {props.surface} km²</p>}
                         <p>{props.description}</p>
