@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { fetchFromApiColombia } from '../services/FetchApiColombia';
+import Pagination from './Pagination'; // Importar el nuevo componente
 
-const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
+const FilterBar = ({ filters, onFilterChange, data, renderItem, itemsPerPage }) => {
     const [dropdownOptions, setDropdownOptions] = useState({});
     const [errorMessage, setErrorMessage] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1); // Página actual
 
     useEffect(() => {
         const fetchDropdownData = async () => {
@@ -26,6 +28,15 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
 
     const handleInputChange = (key, value) => {
         onFilterChange({ key, value });
+        setCurrentPage(1); // Reiniciar a la primera página al cambiar filtros
+    };
+
+    const handleNextPage = () => {
+        setCurrentPage((prevPage) => prevPage + 1);
+    };
+
+    const handlePreviousPage = () => {
+        setCurrentPage((prevPage) => prevPage - 1);
     };
 
     const filteredData = data?.filter(item => {
@@ -43,6 +54,9 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
             return true;
         });
     });
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedData = filteredData?.slice(startIndex, startIndex + itemsPerPage);
 
     return (
         <>
@@ -73,8 +87,20 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
                     ) : null
                 ))}
             </div>
-            {filteredData && filteredData.length > 0 ? (
-                filteredData.map(renderItem)
+            {paginatedData && paginatedData.length > 0 ? (
+                <>
+                    <div className="d-flex justify-content-center flex-wrap gap-4">
+                        {paginatedData.map(renderItem)}
+                    
+                    </div>
+                    <Pagination
+                    currentPage={currentPage}
+                    totalItems={filteredData.length}
+                    itemsPerPage={itemsPerPage}
+                    onNextPage={handleNextPage}
+                    onPreviousPage={handlePreviousPage}
+                                />
+                </>
             ) : (
                 <p className="text-center">No se encontraron resultados.</p>
             )}

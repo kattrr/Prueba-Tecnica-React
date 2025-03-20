@@ -13,17 +13,24 @@ const CardItem = (props) => {
     };
 
     return (
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card" >
             {props.image && <img src={props.image} className="card-img-top" alt={props.name} />}
-            <div className="card-body">
-                <h5 className="card-title">{props.name}</h5>
+            <div className="card-header">
+                    <h5 className="card-title my-3">{props.name}</h5>
+            </div>
+            <div className="card-body mt-3">
                 {props.population && <h6 className="card-subtitle mb-2 text-muted">{props.population}</h6>}
-                <p className="card-text">{props.description}</p>
-                <button type="button" className="btn btn-info" onClick={handleShowModal}>
+                <p className="card-text " style={{ textAlign: "justify" }}>{props.description}</p>
+
+            </div>
+            <div className="card-body text-end">
+                <button type="button" className="btn btn-primary" onClick={handleShowModal}>
                     Ver mas Informacion
                 </button>
-                {showModal && (
-                    <Modal isOpen={showModal} onClose={handleCloseModal} 
+                
+            </div>
+            {showModal && (
+                    <Modal isOpen={showModal} onClose={handleCloseModal}
                         name={props.name}
                         population={props.population}
                         description={props.description}
@@ -31,10 +38,8 @@ const CardItem = (props) => {
                         phone={props.phone}
                         municipalities={props.municipalities}
                         capital={props.capital}
-                        
                     />
                 )}
-            </div>
         </div>
     );
 };

@@ -16,8 +16,8 @@ const Departamentos = () => {
             key: 'regionId', 
             type: 'dropdown', 
             placeholder: 'Seleccionar región', 
-            endpoint: 'Region', // Adjusted to only send 'Region'
-            filterProperty: 'id', // Compare the 'id' property of the fetched regions
+            endpoint: 'Region', 
+            filterProperty: 'id', 
             value: '' 
         }
     ]);
@@ -51,8 +51,9 @@ const Departamentos = () => {
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
             <FilterBar 
                 filters={filters}
+                itemsPerPage={5}
                 onFilterChange={handleFilterChange}
-                data={departmentsData}
+                data={departmentsData} // Pasar todos los datos
                 renderItem={(department) => (
                     <CardItem 
                         key={department.id} 

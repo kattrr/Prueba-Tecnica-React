@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Modal.css';
 
 const Modal = (props) => {
     return (
         <div className="modal fade show" style={{ display: "block" }} tabIndex="-1" aria-labelledby="exampleModalLabel">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h1 className="modal-title" id="exampleModalLabel">{props.name}</h1>
@@ -19,8 +20,11 @@ const Modal = (props) => {
                         {props.municipalities && <p> <FontAwesomeIcon icon="fa-solid fa-city" /><strong> Municipios:</strong> {props.municipalities}</p>}
                         {props.capital &&
                             <>
-                                <h2 className='modal-title fs-3' >Capital:</h2>
-                                <div className="card w-100" style={{ width: "18rem" }}>
+                                
+                                <div className="card w-100">
+                                <div class="card-header">
+                                    <h2 className='card-title' >Capital:</h2>
+                                </div>
                                     <div className="card-body">
                                         <h5 className="card-title mb-4">{props.capital.name}</h5>
                                         {props.capital.population && <p>
