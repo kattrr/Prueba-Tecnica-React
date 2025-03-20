@@ -9,7 +9,17 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const Departamentos = () => {
     const [departmentsData, setDepartmentsData] = useState(null);
-    const [searchTerm, setSearchTerm] = useState("");
+    const [filters, setFilters] = useState([
+        { key: 'name', type: 'text', placeholder: 'Buscar departamento...', value: '' },
+        { 
+            key: 'regionId', 
+            type: 'dropdown', 
+            placeholder: 'Seleccionar región', 
+            endpoint: 'https://api-colombia.com/api/v1/Region', 
+            filterProperty: 'id', // Compare the 'id' property of the fetched regions
+            value: '' 
+        }
+    ]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,14 +33,23 @@ const Departamentos = () => {
         fetchData();
     }, []);
 
+    const handleFilterChange = (updatedFilter) => {
+        setFilters((prevFilters) =>
+            prevFilters.map((filter) =>
+                filter.key === updatedFilter.key
+                    ? { ...filter, value: updatedFilter.value }
+                    : filter
+            )
+        );
+    };
+
     return (
         <div className="container">
             <h1 className="my-5 text-center">Explora los Departamentos de Colombia</h1>
             
             <FilterBar 
-                value={searchTerm} 
-                onChange={(e) => setSearchTerm(e.target.value)} 
-                placeholder="Buscar departamento..." 
+                filters={filters}
+                onFilterChange={handleFilterChange}
                 data={departmentsData}
                 renderItem={(department) => (
                     <CardItem 
@@ -45,7 +64,7 @@ const Departamentos = () => {
                         surface={department.surface}
                         phone={department.phonePrefix}
                         municipalities={department.municipalities}
-                        capital = {department.cityCapital}
+                        capital={department.cityCapital}
                     />
                 )}
             />
