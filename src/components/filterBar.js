@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { fetchFromApiColombia } from '../services/FetchApiColombia';
 
 const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
     const [dropdownOptions, setDropdownOptions] = useState({});
+    const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
         const fetchDropdownData = async () => {
             const options = {};
-            for (const filter of filters) {
-                if (filter.type === 'dropdown' && filter.endpoint) {
-                    try {
-                        const response = await fetch(filter.endpoint);
-                        const result = await response.json();
+            try {
+                for (const filter of filters) {
+                    if (filter.type === 'dropdown' && filter.endpoint) {
+                        const result = await fetchFromApiColombia(filter.endpoint);
                         options[filter.key] = result;
-                    } catch (error) {
-                        console.error(`No se pudo cargar la lista ${filter.key}:`, error);
                     }
                 }
+                setDropdownOptions(options);
+            } catch (error) {
+                console.error("Error al obtener datos del menú desplegable:", error.message);
+                setErrorMessage("Error al cargar las opciones del menú desplegable. Por favor, inténtalo de nuevo más tarde.");
             }
-            setDropdownOptions(options);
         };
         fetchDropdownData();
     }, [filters]);
@@ -35,7 +37,7 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
                 const filterProperty = filter.filterProperty || 'id'; // Default to 'id' if not specified
                 return filter.value
                     ? dropdownOptions[filter.key]?.find(option => option[filterProperty] === parseInt(filter.value)) &&
-                      item[filter.key] === parseInt(filter.value)
+                    item[filter.key] === parseInt(filter.value)
                     : true;
             }
             return true;
@@ -45,6 +47,7 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem }) => {
     return (
         <>
             <div className="mb-4 text-center">
+                {errorMessage && <p className="text-danger">{errorMessage}</p>}
                 {filters.map(filter => (
                     filter.type === 'text' ? (
                         <input

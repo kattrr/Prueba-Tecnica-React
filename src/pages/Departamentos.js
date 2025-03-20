@@ -9,13 +9,14 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const Departamentos = () => {
     const [departmentsData, setDepartmentsData] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
     const [filters, setFilters] = useState([
         { key: 'name', type: 'text', placeholder: 'Buscar departamento...', value: '' },
         { 
             key: 'regionId', 
             type: 'dropdown', 
             placeholder: 'Seleccionar región', 
-            endpoint: 'https://api-colombia.com/api/v1/Region', 
+            endpoint: 'Region', // Adjusted to only send 'Region'
             filterProperty: 'id', // Compare the 'id' property of the fetched regions
             value: '' 
         }
@@ -27,7 +28,8 @@ const Departamentos = () => {
                 const data = await fetchFromApiColombia('Department');
                 setDepartmentsData(data);
             } catch (error) {
-                console.error("Error fetching country data:", error);
+                console.error("Error al obtener datos de los departamentos:", error.message);
+                setErrorMessage("Error al cargar los datos de los departamentos. Por favor, inténtalo de nuevo más tarde.");
             }
         };
         fetchData();
@@ -46,7 +48,7 @@ const Departamentos = () => {
     return (
         <div className="container">
             <h1 className="my-5 text-center">Explora los Departamentos de Colombia</h1>
-            
+            {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
             <FilterBar 
                 filters={filters}
                 onFilterChange={handleFilterChange}

@@ -3,12 +3,15 @@ export async function fetchFromApiColombia(endpoint) {
     try {
         const response = await fetch(`${baseUrl}${endpoint}`);
         if (!response.ok) {
-            throw new Error(`Error fetching data: ${response.statusText}`);
+            const errorDetails = await response.json().catch(() => ({}));
+            throw new Error(
+                `Error al obtener los datos: ${response.status} ${response.statusText}. Detalles: ${errorDetails.message || 'No hay detalles adicionales disponibles.'}`
+            );
         }
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Fetch error:", error);
+        console.error("Error de obtención:", error.message);
         throw error;
     }
 }
