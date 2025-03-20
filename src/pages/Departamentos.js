@@ -1,11 +1,16 @@
-import { fetchFromApiColombia } from '../services/FetchApiColombia';
 import { useEffect, useState } from 'react';
+import { fetchFromApiColombia } from '../services/FetchApiColombia';
+
 import CardItem from '../components/cardItem';
+import FilterBar from '../components/filterBar';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const Departamentos = () => {
     const [departmentsData, setDepartmentsData] = useState(null);
-    const [searchTerm, setSearchTerm] = useState("")
-    
+    const [searchTerm, setSearchTerm] = useState("");
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -17,35 +22,29 @@ const Departamentos = () => {
         };
         fetchData();
     }, []);
-    const filteredDepartments = departmentsData?.filter(department =>
-        department.name.toLowerCase().includes(searchTerm.toLowerCase()) // Comparación sin distinción de mayúsculas/minúsculas
-    );
+
     return (
         <div className="container">
             <h1 className="my-5 text-center">Explora los Departamentos de Colombia</h1>
             
-            <div className="mb-4 text-center">
-                <input 
-                    type="text" 
-                    placeholder="Buscar departamento..." 
-                    className="form-control w-50 mx-auto"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-            </div>
-
-            {/* Mostrar los departamentos filtrados */}
-            {filteredDepartments && filteredDepartments.length > 0 ? (
-                filteredDepartments.map(department => (
+            <FilterBar 
+                value={searchTerm} 
+                onChange={(e) => setSearchTerm(e.target.value)} 
+                placeholder="Buscar departamento..." 
+                data={departmentsData}
+                renderItem={(department) => (
                     <CardItem 
                         key={department.id} 
-                        name={department.name} 
+                        name={department.name}
+                        population={
+                            <>
+                                <FontAwesomeIcon icon={faUsers} /> <strong>Población:</strong> {department.population}
+                            </>
+                        }
                         description={department.description} 
                     />
-                ))
-            ) : (
-                <p className="text-center">No se encontraron resultados.</p>
-            )}
+                )}
+            />
         </div>
     );
 };
