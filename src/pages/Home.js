@@ -21,29 +21,85 @@ const Home = () => {
     return (
         <div className="container">
             <h1 className="my-5 text-center">Explora las Características de Colombia</h1>
-            <section className="row">
+            <section className='card px-4 '>
                 {countryData ? (
-                    <div className="col-12">
-                        <h2 className="text-center mb-4">{countryData.name}</h2>
-                        <div className="row">
-                            <div className="col-md-6 mb-3">
-                                <p><FontAwesomeIcon icon={faLandmark} /> <strong>Capital:</strong> {countryData.stateCapital}</p>
-                                <p><FontAwesomeIcon icon={faMap} /> <strong>Superficie:</strong> {countryData.surface} km²</p>
-                                <p><FontAwesomeIcon icon={faUsers} /> <strong>Población:</strong> {countryData.population}</p>
-                                <p><FontAwesomeIcon icon={faLanguage} /> <strong>Idiomas:</strong> {countryData.languages.join(', ')}</p>
-                            </div>
-                            <div className="col-md-6 mb-3">
-                                <p><FontAwesomeIcon icon={faClock} /> <strong>Zona Horaria:</strong> {countryData.timeZone}</p>
-                                <p><FontAwesomeIcon icon={faMoneyBill} /> <strong>Moneda:</strong> {countryData.currency} ({countryData.currencySymbol})</p>
-                                <p><FontAwesomeIcon icon={faGlobe} /> <strong>Región:</strong> {countryData.region}</p>
-                                <p><FontAwesomeIcon icon={faMapSigns} /> <strong>Subregión:</strong> {countryData.subRegion}</p>
-                                <p><FontAwesomeIcon icon={faFlag} /> <strong>Fronteras:</strong> {countryData.borders.join(', ')}</p>
-                            </div>
+                    <>
+                        <h2 className="text-center mt-4 pt-3">{countryData.name}</h2>
+                        <div className="table-responsive my-5">
+                            {countryData.flags && (
+                                <div className="d-sm-block d-md-none text-center mb-3">
+                                    <img src={countryData.flags[0]} alt="Bandera del país" className="img-fluid" style={{ maxWidth: '200px' }} />
+                                </div>
+                            )}
+                            <table className="table">
+                                <tbody>
+                                    <tr className="d-md-table-row d-none">
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faLandmark} /> <strong>Capital:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.stateCapital}</td>
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faMap} /> <strong>Superficie:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.surface} km²</td>
+                                        <td rowSpan={6} className="text-center align-middle d-md-table-cell">
+                                            <img src={countryData.flags[0]} alt="Bandera del país" className="img-fluid" style={{ maxWidth: '200px' }} />
+                                        </td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faLandmark} /> <strong>Capital:</strong></td>
+                                        <td className="d-table-cell">{countryData.stateCapital}</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faMap} /> <strong>Superficie:</strong></td>
+                                        <td className="d-table-cell">{countryData.surface} km²</td>
+                                    </tr>
+                                    <tr className="d-md-table-row d-none">
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faUsers} /> <strong>Población:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.population}</td>
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faLanguage} /> <strong>Idiomas:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.languages.join(', ')}</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faUsers} /> <strong>Población:</strong></td>
+                                        <td className="d-table-cell">{countryData.population}</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faLanguage} /> <strong>Idiomas:</strong></td>
+                                        <td className="d-table-cell">{countryData.languages.join(', ')}</td>
+                                    </tr>
+                                    <tr className="d-md-table-row d-none">
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faClock} /> <strong>Zona Horaria:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.timeZone}</td>
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faMoneyBill} /> <strong>Moneda:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.currency} ({countryData.currencySymbol})</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faClock} /> <strong>Zona Horaria:</strong></td>
+                                        <td className="d-table-cell">{countryData.timeZone}</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faMoneyBill} /> <strong>Moneda:</strong></td>
+                                        <td className="d-table-cell">{countryData.currency} ({countryData.currencySymbol})</td>
+                                    </tr>
+                                    <tr className="d-md-table-row d-none">
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faGlobe} /> <strong>Región:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.region}</td>
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faMapSigns} /> <strong>Subregión:</strong></td>
+                                        <td className="d-md-table-cell">{countryData.subRegion}</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faGlobe} /> <strong>Región:</strong></td>
+                                        <td className="d-table-cell">{countryData.region}</td>
+                                    </tr>
+                                    <tr className="d-md-none d-table-row">
+                                        <td className="d-table-cell"><FontAwesomeIcon icon={faMapSigns} /> <strong>Subregión:</strong></td>
+                                        <td className="d-table-cell">{countryData.subRegion}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="d-md-table-cell"><FontAwesomeIcon icon={faFlag} /> <strong>Fronteras:</strong></td>
+                                        <td className="d-md-table-cell" colSpan={3}>{countryData.borders.join(', ')}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div className="text-center">
-                            <img src={countryData.flags[0]} alt="Bandera de Colombia" className="img-fluid" style={{ maxWidth: '200px' }} />
-                        </div>
-                    </div>
+                    </>
                 ) : (
                     <p className="text-center">Cargando información...</p>
                 )}
