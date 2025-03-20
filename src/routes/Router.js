@@ -8,7 +8,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}> 
-          <Route index path="Inicio" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="Departamentos" element={<Departamentos />} />
 
           {/* <Route path="*" element={<NoPage />} /> */}

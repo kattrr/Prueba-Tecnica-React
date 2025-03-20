@@ -4,7 +4,7 @@ const Nav = () => {
     <nav className="navbar ">
       <div className="container-fluid">
         <li className="nav-item">
-          <Link to="/Inicio">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link to="/Departamentos">Departamentos</Link>
