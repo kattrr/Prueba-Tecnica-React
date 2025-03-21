@@ -65,5 +65,5 @@ h1 {
     animation: fadeIn 1.5s ease-out;
 }
 .mainFooter {
-    animation: slideIn-from-bottom 5s ease-out;
+    animation: slideIn-from-bottom 2s ease-out;
 }
