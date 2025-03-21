@@ -39,3 +39,9 @@
     --bs-table-bg: transparent;
     background-color: transparent !important;
 }
+
+.carousel-control-next, .carousel-control-prev{
+    width: 6% !important;
+    top: 35% !important;
+    bottom: 35% !important;
+}

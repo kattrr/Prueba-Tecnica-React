@@ -47,7 +47,7 @@ const Regiones = () => {
                                 name={region.name}
                                 description={region.description}
                                 type="noModal"
-                                style={{minHeight:'251px', maxWidth: '60%', margin: 'auto 20%'}}
+                                style={{minHeight:'251px', maxWidth: '80%', margin: 'auto 10%'}}
                                 className={index === activeIndex ? "carousel-item active" : "carousel-item"}
                             />
                         ))
@@ -56,7 +56,7 @@ const Regiones = () => {
                     )}
                 </div>
                 <button
-                    className="carousel-control-prev bg-dark"
+                    className="carousel-control-prev bg-primary rounded-circle"
                     type="button"
                     onClick={handlePrev} // Cambiar al elemento anterior
                 >
@@ -64,7 +64,7 @@ const Regiones = () => {
                     <span className="visually-hidden">Previous</span>
                 </button>
                 <button
-                    className="carousel-control-next bg-dark"
+                    className="carousel-control-next bg-primary rounded-circle"
                     type="button"
                     onClick={handleNext} // Cambiar al siguiente elemento
                 >
