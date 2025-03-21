@@ -7,6 +7,7 @@ import Turismo from "../pages/Touristic";
 import Aeropuertos from "../pages/Aeropuertos";
 import PlatosTipicos from "../pages/PlatosTipicos";
 import Contacto from "../pages/Contacto";
+import NoPage from "../pages/NoPage";
 
 function Router() {
   return (
@@ -20,7 +21,7 @@ function Router() {
           <Route path="Aeropuertos" element={<Aeropuertos />} />
           <Route path="Platos" element={<PlatosTipicos />} />
           <Route path="Contacto" element={<Contacto />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
