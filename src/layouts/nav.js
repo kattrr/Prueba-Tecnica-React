@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Nav = () => {
   return (
-    <nav className="navbar navbar-expand-lg py-4" style={{ backgroundColor: "#99bdff" }}>
+    <nav className="navbar navbar-expand-lg py-4 mainNav" style={{ backgroundColor: "#99bdff" }} id="mainNav">
       <div className="container">
         <div className="container-fluid">
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

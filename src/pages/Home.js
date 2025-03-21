@@ -5,6 +5,7 @@ import { fetchFromApiColombia } from '../services/FetchApiColombia';
 import NaturalAreasType from './NaturalAreas';
 import Mapas from './Mapas';
 import Regiones from './Region';
+import AOS from 'aos';
 
 const Home = () => {
     const [countryData, setCountryData] = useState(null);
@@ -14,6 +15,7 @@ const Home = () => {
             try {
                 const data = await fetchFromApiColombia('Country/Colombia');
                 setCountryData(data);
+                AOS.refresh(); // Reinicializa AOS después de cargar el contenido
             } catch (error) {
                 console.error("Error fetching country data:", error);
             }
@@ -23,8 +25,8 @@ const Home = () => {
 
     return (
         <div className="container">
-            <h1 className="my-5 text-center">Explora las Características de Colombia</h1>
-            <section className='card px-4 '>
+            <h1 className="my-5 text-center titulo">Explora las Características de Colombia</h1>
+            <section className='card px-4 datosColombia'>
                 {countryData ? (
                     <>
                         <h2 className="text-center mt-4 pt-3">{countryData.name}</h2>
@@ -108,15 +110,15 @@ const Home = () => {
                 )}
             </section>
             <hr />
-            <section className='my-5 py-3'>
+            <section className='my-5 py-3 regiones' data-aos="fade-right" data-aos-duration="3000">
                 <Regiones />
             </section>
             <hr />
-            <section  className='my-5 py-3'>
+            <section className='my-5 py-3 areasNaturales' data-aos="fade-left" data-aos-duration="3000">
                 <NaturalAreasType />
             </section>
             <hr />
-            <section  className='my-5 py-3'>
+            <section className='my-5 py-3 mapas' data-aos="fade-right" data-aos-duration="2500">
                 <Mapas />
             </section>
             

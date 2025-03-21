@@ -7,7 +7,7 @@ const Pagination = ({ currentPage, totalItems, itemsPerPage, onNextPage, onPrevi
     const totalPages = Math.ceil(totalItems / itemsPerPage);
 
     return (
-        <div className="d-flex justify-content-between my-4 py-4">
+        <div className="d-flex justify-content-between my-4 py-4 elementos">
             <button 
                 className="btn btn-secondary mx-2" 
                 onClick={onPreviousPage} 

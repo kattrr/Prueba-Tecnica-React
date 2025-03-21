@@ -60,7 +60,7 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem, itemsPerPage }) 
 
     return (
         <>
-            <div className="mb-4 text-center">
+            <div className="mb-4 text-center fade-in">
                 {errorMessage && <p className="text-danger">{errorMessage}</p>}
                 {filters.map(filter => (
                     filter.type === 'text' ? (
@@ -89,7 +89,7 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem, itemsPerPage }) 
             </div>
             {paginatedData && paginatedData.length > 0 ? (
                 <>
-                    <div className="d-flex justify-content-between flex-wrap gap-4">
+                    <div className="d-flex justify-content-between flex-wrap gap-4 elementos">
                         {paginatedData.map(renderItem)}
                     
                     </div>

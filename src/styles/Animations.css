@@ -1,0 +1,85 @@
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn-from-top {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideIn-from-bottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10%);
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideout {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.mainNav {
+    animation: slideIn-from-top 1.5s ease-out;
+    /* animation: slideout 0.8s ease-out, fadeIn 1.2s ease-in-out; */
+}
+.titulo {
+    animation: fadeIn 1.2s ease-in-out;
+}
+.datosColombia{
+    animation: zoomIn 1.0s ease-out;
+}
+.contacto {
+    animation: slideIn-from-bottom 2s ease-out;
+}
+.elementos {
+    animation: slideIn-from-bottom 1.5s ease-out, fadeIn 1.2s ease-in-out;
+}
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+h1 {
+    animation: fadeIn 1.5s ease-out;
+}

@@ -39,7 +39,7 @@ const Contacto = () => {
     return (
         <>
             <section>
-                <div className="container mt-5">
+                <div className="container mt-5 contacto">
                     <div className="card shadow-sm">
                         <div className="card-body text-center">
                             <h2 className="card-title text-primary">Sobre mí</h2>
@@ -68,7 +68,7 @@ const Contacto = () => {
                 </div>
             </section>
             <section>
-                <div className="container mt-5">
+                <div className="container mt-5 contacto">
                     <h1 className="text-center text-success">Contáctanos</h1>
                     <p className="text-center text-muted">
                         Si tienes alguna pregunta o comentario, no dudes en escribirnos. ¡Nos encantaría saber de ti!
