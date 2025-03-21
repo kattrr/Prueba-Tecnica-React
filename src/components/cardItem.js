@@ -1,6 +1,6 @@
 import Modal from './Modal';
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const CardItem = (props) => {
     const [showModal, setShowModal] = React.useState(false);
 
@@ -27,6 +27,7 @@ const CardItem = (props) => {
                 {props.politicalParty && <p><strong>Partido Político:</strong> {props.politicalParty}</p>}
                 {props.startPeriodDate && <p>  {props.startPeriodDate}</p>}
                 {props.endPeriodDate && <p>{props.endPeriodDate}</p>}
+                {props.ubicacion && <p><FontAwesomeIcon icon="fa-solid fa-map-location-dot" /> <strong>Ubicacion:</strong> {props.ubicacion}</p>}
                 <p className="card-text " style={{ textAlign: "justify" }}>{props.description}</p>
 
             </div>

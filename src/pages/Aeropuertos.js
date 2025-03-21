@@ -49,7 +49,7 @@ const Aeropuertos = () => {
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
             <FilterBar 
                 filters={filters}
-                itemsPerPage={5}
+                itemsPerPage={8}
                 onFilterChange={handleFilterChange}
                 data={aeropuertosData} // Pasar todos los datos
                 renderItem={(airport) => (
@@ -58,7 +58,9 @@ const Aeropuertos = () => {
                         name={airport.name}
                         capital={airport.city}
                         latitude={airport.latitude}
-                        longitude={airport.longitude}  
+                        longitude={airport.longitude}
+                        style={{ minWidth: '300px', maxWidth: '300px' }}
+                        ubicacion={airport.city.name}
                     />
                 )}
             />
