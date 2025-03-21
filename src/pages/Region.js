@@ -38,7 +38,7 @@ const Regiones = () => {
             <h1 className="my-5 text-center">Regiones de Colombia</h1>
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
-            <div className='carousel slide' id='carouselExample' >
+            <div className='carousel slide' id='carouselRegiones' >
                 <div className="carousel-inner ">
                     {regionsData && regionsData.length > 0 ? (
                         regionsData.map((region, index) => (
@@ -56,6 +56,8 @@ const Regiones = () => {
                     )}
                 </div>
                 <button
+                    data-bs-target="#carouselRegiones"
+                    data-bs-slide="prev"
                     className="carousel-control-prev bg-primary rounded-circle"
                     type="button"
                     onClick={handlePrev} // Cambiar al elemento anterior
@@ -64,6 +66,8 @@ const Regiones = () => {
                     <span className="visually-hidden">Previous</span>
                 </button>
                 <button
+                    data-bs-target="#carouselRegiones"
+                    data-bs-slide="next"
                     className="carousel-control-next bg-primary rounded-circle"
                     type="button"
                     onClick={handleNext} // Cambiar al siguiente elemento

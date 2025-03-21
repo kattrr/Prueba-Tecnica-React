@@ -89,7 +89,7 @@ const FilterBar = ({ filters, onFilterChange, data, renderItem, itemsPerPage }) 
             </div>
             {paginatedData && paginatedData.length > 0 ? (
                 <>
-                    <div className="d-flex justify-content-between flex-wrap gap-4 elementos">
+                    <div className="d-flex justify-content-evenly justify-content-xl-between flex-wrap gap-4 py-4 my-5 elementos">
                         {paginatedData.map(renderItem)}
                     
                     </div>
