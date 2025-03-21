@@ -50,6 +50,8 @@ const CardItem = (props) => {
                         phone={props.phone}
                         municipalities={props.municipalities}
                         capital={props.capital}
+                        latitude={props.latitude}
+                        longitude={props.longitude}
                     />
                 )}
         </div>
