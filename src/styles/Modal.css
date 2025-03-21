@@ -2,7 +2,7 @@
     background: linear-gradient(135deg,
             rgba(255, 215, 0, 0.8) 10%,
             /* Amarillo con opacidad */
-            #0033a0cc 50%,
+            rgba(0, 51, 160, 0.8) 50%,
             /* Azul con opacidad */
             rgba(206, 17, 38, 0.8) 100%
             /* Rojo con opacidad */

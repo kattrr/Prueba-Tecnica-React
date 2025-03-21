@@ -1,0 +1,41 @@
+.datosColombia::after,
+.datosColombia::before {
+    content: "";
+    background: #323ee34c;
+    position: absolute;
+
+}
+
+.datosColombia::before {
+    border-radius: 50%;
+    width: 21rem;
+    height: 21rem;
+    top: 10%;
+    right: 7%;
+}
+
+.datosColombia .box {
+    background-color: rgba(156, 200, 247, 0.288);
+    border: 1px solid rgba(221, 151, 151, 0.48);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .35em;
+    transition: all ease 0.3s;
+}
+
+.datosColombia .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.datosColombia:hover {
+    box-shadow: 0px 0px 20px 1px #e2300840;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.datosColombia .table-responsive,
+.datosColombia .table {
+    --bs-table-bg: transparent;
+    background-color: transparent !important;
+}
