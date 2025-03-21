@@ -5,6 +5,7 @@ import Layout from "../pages/Layout";
 import Presidentes from "../pages/Presidents";
 import Turismo from "../pages/Touristic";
 import Aeropuertos from "../pages/Aeropuertos";
+import PlatosTipicos from "../pages/PlatosTipicos";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
           <Route path="Presidentes" element={<Presidentes />} />
           <Route path="Turismo" element={<Turismo />} />
           <Route path="Aeropuertos" element={<Aeropuertos />} />
+          <Route path="Platos" element={<PlatosTipicos />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>

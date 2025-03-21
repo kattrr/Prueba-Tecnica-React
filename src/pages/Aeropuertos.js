@@ -45,7 +45,7 @@ const Aeropuertos = () => {
 
     return (
         <div className="container">
-            <h1 className="my-5 text-center">Explora los Lugares Turisticos de Colombia</h1>
+            <h1 className="my-5 text-center">Descubre los aeropuertos de Colombia</h1>
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
             <FilterBar 
                 filters={filters}
