@@ -4,9 +4,6 @@ import { fetchFromApiColombia } from '../services/FetchApiColombia';
 import CardItem from '../components/cardItem';
 import FilterBar from '../components/filterBar';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
 const PlatosTipicos = () => {
     const [dishesData, setDishesData] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
