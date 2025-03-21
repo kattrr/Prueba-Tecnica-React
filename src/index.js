@@ -8,6 +8,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './styles/Animations.css';
+import './styles/Global.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
