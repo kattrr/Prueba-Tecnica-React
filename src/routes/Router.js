@@ -4,6 +4,7 @@ import Departamentos from "../pages/Departamentos";
 import Layout from "../pages/Layout";
 import Presidentes from "../pages/Presidents";
 import Turismo from "../pages/Touristic";
+import Aeropuertos from "../pages/Aeropuertos";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
           <Route path="Departamentos" element={<Departamentos />} />
           <Route path="Presidentes" element={<Presidentes />} />
           <Route path="Turismo" element={<Turismo />} />
+          <Route path="Aeropuertos" element={<Aeropuertos />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
