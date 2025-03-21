@@ -61,6 +61,7 @@ const Aeropuertos = () => {
                         longitude={airport.longitude}
                         style={{ minWidth: '300px', maxWidth: '300px' }}
                         ubicacion={airport.city.name}
+                        regionId={airport.department.regionId}
                     />
                 )}
             />

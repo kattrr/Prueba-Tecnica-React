@@ -68,6 +68,8 @@ const Departamentos = () => {
                         phone={department.phonePrefix}
                         municipalities={department.municipalities}
                         capital={department.cityCapital}
+                        regionId={department.regionId}
+                        
                     />
                 )}
             />

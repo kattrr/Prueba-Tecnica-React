@@ -49,6 +49,7 @@ const Regiones = () => {
                                 type="noModal"
                                 style={{minHeight:'251px', maxWidth: '80%', margin: 'auto 10%'}}
                                 className={index === activeIndex ? "carousel-item active" : "carousel-item"}
+                                regionId={region.id}
                             />
                         ))
                     ) : (
@@ -58,7 +59,7 @@ const Regiones = () => {
                 <button
                     data-bs-target="#carouselRegiones"
                     data-bs-slide="prev"
-                    className="carousel-control-prev bg-primary rounded-circle d-none d-md-block"
+                    className="carousel-control-prev bg-dark rounded-circle d-none d-md-block"
                     type="button"
                     onClick={handlePrev} // Cambiar al elemento anterior
                 >
@@ -68,7 +69,7 @@ const Regiones = () => {
                 <button
                     data-bs-target="#carouselRegiones"
                     data-bs-slide="next"
-                    className="carousel-control-next bg-primary rounded-circle d-none d-md-block"
+                    className="carousel-control-next bg-dark rounded-circle d-none d-md-block"
                     type="button"
                     onClick={handleNext} // Cambiar al siguiente elemento
                 >

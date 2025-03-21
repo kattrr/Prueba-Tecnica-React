@@ -1,6 +1,8 @@
 import Modal from './Modal';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../styles/CardItem.css'; // Import a CSS file for dynamic styles
+
 const CardItem = (props) => {
     const [showModal, setShowModal] = React.useState(false);
 
@@ -12,8 +14,11 @@ const CardItem = (props) => {
         setShowModal(false);
     };
 
+    const regionId = props.regionId;
+    const cardColorClass = regionId >= 1 && regionId <= 6 ? `card-color-${regionId}` : 'card-color-default';
+
     return (
-        <div className={`card ${props.className || ''}`} style={props.style}>
+        <div className={`card ${props.className || ''} ${cardColorClass}`} style={props.style}>
 
             <div className="card-header">
                 <h5 className="card-title my-3">

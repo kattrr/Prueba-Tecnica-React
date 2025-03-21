@@ -8,7 +8,7 @@ const PlatosTipicos = () => {
     const [dishesData, setDishesData] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
     const [filters, setFilters] = useState([
-        { key: 'name', type: 'text', placeholder: 'Buscar Nombre del plato...', value: '' },
+        { key: 'name', type: 'text', placeholder: 'Buscar Nombre del plato...', value: '' }
     ]);
 
     useEffect(() => {
@@ -52,6 +52,7 @@ const PlatosTipicos = () => {
                         ingredients={dish.ingredients}
                         type="noModal"
                         style={{ minHeight: '455px', maxWidth: '22%' }}
+                        regionId={dish.department.regionId}
                     />
                 )}
             />
