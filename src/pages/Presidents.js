@@ -64,7 +64,7 @@ const Presidentes = () => {
                         </>}
                         description={president.description}
                         image={president.image}
-                        type="president"
+                        type="noModal"
                     />
                 )}
             />

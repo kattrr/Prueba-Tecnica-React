@@ -30,7 +30,7 @@ const CardItem = (props) => {
 
             </div>
             <div className="card-body text-end">
-                {(props.type !== "president") || (props.type !==  "natural")  && (
+                {props.type !== "noModal" && (
                     <button type="button" className="btn btn-primary" onClick={handleShowModal}>
                         Ver mas Informacion
                     </button>
