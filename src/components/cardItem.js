@@ -26,7 +26,7 @@ const CardItem = (props) => {
                 </h5>
             </div>
             <div className="card-body mt-3">
-                {props.image && <img src={props.image} className="img-fluid d-block mx-auto mb-5" alt={props.name} style={{ maxWidth: "200px" }} />}
+                {props.image && <a href={props.image} target="_blank" rel="noreferrer"><img src={props.image} className="img-fluid d-block mx-auto mb-5" alt={props.name} style={{ maxWidth: "200px" }} /></a>}
                 {props.ingredients && <p> <strong>Ingredientes: </strong>{props.ingredients}</p>}
                 {props.population && <h6 className="card-subtitle mb-2 text-muted">{props.population}</h6>}
                 {props.politicalParty && <p><strong>Partido Político:</strong> {props.politicalParty}</p>}
