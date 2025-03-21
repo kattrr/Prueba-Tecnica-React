@@ -73,7 +73,7 @@ const Contacto = () => {
             </section>
             <section>
                 <div className="container my-5 contacto py-5">
-                    <h1 className="text-center" style={{ color: 'var(--bs-purple)' }}>Contáctanos</h1>
+                    <h2 className="text-center fs-1" style={{ color: 'var(--bs-purple)' }}>Contáctanos</h2>
                     <p className="text-center text-muted">
                         Si tienes alguna pregunta o comentario, no dudes en escribirnos. ¡Nos encantaría saber de ti!
                     </p>

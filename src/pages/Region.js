@@ -35,7 +35,7 @@ const Regiones = () => {
 
     return (
         <div className="container">
-            <h1 className="my-5 text-center">Regiones de Colombia</h1>
+            <h2 className="my-5 text-center fs-1">Regiones de Colombia</h2>
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
             <div className='carousel slide' id='carouselRegiones' >

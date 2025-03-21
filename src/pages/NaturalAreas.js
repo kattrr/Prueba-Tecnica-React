@@ -37,7 +37,7 @@ const NaturalAreasType = () => {
 
     return (
         <div className="container">
-            <h1 className="my-5 text-center">Tipos de Áreas Naturales en Colombia</h1>
+            <h2 className="my-5 text-center fs-1">Tipos de Áreas Naturales en Colombia</h2>
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
             <FilterBar
                 filters={filters}

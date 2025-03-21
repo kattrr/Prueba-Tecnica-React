@@ -21,9 +21,9 @@ const CardItem = (props) => {
         <div className={`card shadow-lg ${props.className || ''} ${cardColorClass}`} style={props.style}>
 
             <div className="card-header">
-                <h5 className="card-title my-3">
+                <h2 className="card-title my-3 fs-4">
                     {props.name}{props.lastName ? ` ${props.lastName}` : ''}
-                </h5>
+                </h2>
             </div>
             <div className="card-body mt-3">
                 {props.image && (

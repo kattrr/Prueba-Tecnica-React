@@ -37,7 +37,7 @@ const Mapas = () => {
 
     return (
         <div className="container">
-            <h1 className="my-5 text-center">Tipos de Mapas de Colombia</h1>
+            <h2 className="my-5 text-center fs-1">Tipos de Mapas de Colombia</h2>
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
             <FilterBar 
                 filters={filters}
