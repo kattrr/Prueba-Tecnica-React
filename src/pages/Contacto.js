@@ -50,16 +50,16 @@ const Contacto = () => {
                                 <strong>Cargo:</strong> Desarrolladora Front-End / Diseñadora UX/UI
                             </p>
                             <div className="d-flex justify-content-center gap-3 mt-3">
-                                <a href="mailto:kathering.rivera@example.com" className="text-decoration-none text-dark">
+                                <a href="mailto:katheriverar@gmail.com" className="text-decoration-none text-dark">
                                 <FontAwesomeIcon icon="fas fa-envelope" /> Correo
                                 </a>
-                                <a href="https://github.com/katheringrivera" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
+                                <a href="https://github.com/kattrr" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
                                 <FontAwesomeIcon icon="fa-brands fa-github" /> GitHub
                                 </a>
-                                <a href="https://www.linkedin.com/in/katheringrivera" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
+                                <a href="https://www.linkedin.com/in/katheringriverar/" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
                                 <FontAwesomeIcon icon="fab fa-linkedin" /> LinkedIn
                                 </a>
-                                <a href="https://katheringrivera.com" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
+                                <a href="https://www.behance.net/katherivera" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
                                 <FontAwesomeIcon icon="fa-brands fa-behance" /> Portafolio
                                 </a>
                             </div>
