@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { fetchFromApiColombia } from '../services/FetchApiColombia';
 import NaturalAreasType from './NaturalAreas';
 import Mapas from './Mapas';
+import Regiones from './Region';
 
 const Home = () => {
     const [countryData, setCountryData] = useState(null);
@@ -106,12 +107,19 @@ const Home = () => {
                     <p className="text-center">Cargando información...</p>
                 )}
             </section>
-            <section>
+            <hr />
+            <section className='my-5 py-3'>
+                <Regiones />
+            </section>
+            <hr />
+            <section  className='my-5 py-3'>
                 <NaturalAreasType />
             </section>
-            <section>
+            <hr />
+            <section  className='my-5 py-3'>
                 <Mapas />
             </section>
+            
         </div>
     );
 };
