@@ -31,25 +31,6 @@
     }
 }
 
-@keyframes slideout {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes bounceIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 @keyframes zoomIn {
     from {
@@ -63,7 +44,7 @@
 }
 .mainNav {
     animation: slideIn-from-top 1.5s ease-out;
-    /* animation: slideout 0.8s ease-out, fadeIn 1.2s ease-in-out; */
+    
 }
 .titulo {
     animation: fadeIn 1.2s ease-in-out;
@@ -82,4 +63,7 @@
 }
 h1 {
     animation: fadeIn 1.5s ease-out;
+}
+.mainFooter {
+    animation: slideIn-from-bottom 5s ease-out;
 }
