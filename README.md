@@ -22,7 +22,7 @@ Sigue estos pasos para descargar e instalar el proyecto:
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/prueba-tecnica-app.git
+   git clone https://github.com/kattrr/Prueba-Tecnica-React.git
    ```
 
 2. Navega al directorio del proyecto:
