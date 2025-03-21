@@ -58,7 +58,7 @@ const Regiones = () => {
                 <button
                     data-bs-target="#carouselRegiones"
                     data-bs-slide="prev"
-                    className="carousel-control-prev bg-primary rounded-circle"
+                    className="carousel-control-prev bg-primary rounded-circle d-none d-md-block"
                     type="button"
                     onClick={handlePrev} // Cambiar al elemento anterior
                 >
@@ -68,7 +68,7 @@ const Regiones = () => {
                 <button
                     data-bs-target="#carouselRegiones"
                     data-bs-slide="next"
-                    className="carousel-control-next bg-primary rounded-circle"
+                    className="carousel-control-next bg-primary rounded-circle d-none d-md-block"
                     type="button"
                     onClick={handleNext} // Cambiar al siguiente elemento
                 >
