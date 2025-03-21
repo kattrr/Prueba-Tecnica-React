@@ -3,6 +3,7 @@ import { faLandmark, faMap, faUsers, faLanguage, faClock, faMoneyBill, faGlobe, 
 import { useEffect, useState } from 'react';
 import { fetchFromApiColombia } from '../services/FetchApiColombia';
 import NaturalAreasType from './NaturalAreas';
+import Mapas from './Mapas';
 
 const Home = () => {
     const [countryData, setCountryData] = useState(null);
@@ -107,6 +108,9 @@ const Home = () => {
             </section>
             <section>
                 <NaturalAreasType />
+            </section>
+            <section>
+                <Mapas />
             </section>
         </div>
     );
