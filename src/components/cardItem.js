@@ -18,7 +18,7 @@ const CardItem = (props) => {
     const cardColorClass = regionId >= 1 && regionId <= 6 ? `card-color-${regionId}` : 'card-color-default';
 
     return (
-        <div className={`card ${props.className || ''} ${cardColorClass}`} style={props.style}>
+        <div className={`card shadow-lg ${props.className || ''} ${cardColorClass}`} style={props.style}>
 
             <div className="card-header">
                 <h5 className="card-title my-3">
