@@ -13,7 +13,7 @@ const CardItem = (props) => {
     };
 
     return (
-        <div className="card" >
+        <div className={`card ${props.className || ''}`} style={props.style}>    
             
             <div className="card-header">
                     <h5 className="card-title my-3">
@@ -30,7 +30,7 @@ const CardItem = (props) => {
 
             </div>
             <div className="card-body text-end">
-                {props.type !== "president" && (
+                {(props.type !== "president") || (props.type !==  "natural")  && (
                     <button type="button" className="btn btn-primary" onClick={handleShowModal}>
                         Ver mas Informacion
                     </button>

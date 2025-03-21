@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLandmark, faMap, faUsers, faLanguage, faClock, faMoneyBill, faGlobe, faMapSigns, faFlag } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { fetchFromApiColombia } from '../services/FetchApiColombia';
+import NaturalAreasType from './NaturalAreas';
 
 const Home = () => {
     const [countryData, setCountryData] = useState(null);
@@ -103,6 +104,9 @@ const Home = () => {
                 ) : (
                     <p className="text-center">Cargando información...</p>
                 )}
+            </section>
+            <section>
+                <NaturalAreasType />
             </section>
         </div>
     );
