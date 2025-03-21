@@ -40,9 +40,9 @@ const Contacto = () => {
         <>
             <section>
                 <div className="container mt-5 contacto">
-                    <div className="card shadow-sm">
+                    <div className="card shadow-sm rounded-5">
                         <div className="card-body text-center">
-                            <h2 className="card-title text-primary">Sobre mí</h2>
+                            <h2 className="card-title" style={{color: 'var(--bs-purple)'}}>Sobre mí</h2>
                             <p className="card-text text-muted">
                                 <strong>Nombre:</strong> Kathering Rivera Rodriguez
                             </p>
@@ -68,8 +68,8 @@ const Contacto = () => {
                 </div>
             </section>
             <section>
-                <div className="container mt-5 contacto">
-                    <h1 className="text-center text-success">Contáctanos</h1>
+                <div className="container my-5 contacto py-5">
+                    <h1 className="text-center" style={{color: 'var(--bs-purple)'}}>Contáctanos</h1>
                     <p className="text-center text-muted">
                         Si tienes alguna pregunta o comentario, no dudes en escribirnos. ¡Nos encantaría saber de ti!
                     </p>
@@ -110,7 +110,7 @@ const Contacto = () => {
                             ></textarea>
                             {errors.mensaje && <div className="invalid-feedback">{errors.mensaje}</div>}
                         </div>
-                        <button type="submit" className="btn btn-success w-100">
+                        <button type="submit" className="btn w-100 text-white" style={{background: 'var(--bs-purple)'}}>
                             Enviar
                         </button>
                     </form>
